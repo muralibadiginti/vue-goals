@@ -14,20 +14,12 @@
   </head>
   <body>
     <header>
-      <h1>Vue Events</h1>
+      <h1>Vue Dynamic Styling</h1>
     </header>
-    <section id="events">
-      <h2>Events in Action</h2>
-      <button @click = "add(10)">Add</button>
-      <button @click = "reduce(2)">Remove</button>
-      <p>Result: {{ counter }}</p>
-      <input type = "text" :name = "name">
-      <button type = "button" @click="resetInput()">Reset Button</button>
-      <p>{{fullname}}</p>
-      <form @submit.prevent ="signUpForm">
-        <input type="text">
-        <button>Sign Up</button>
-      </form>
+    <section id="styling">
+      <div class="demo" :style = "{borderColor : boxAselected ? 'red' : '#ccc' }" @click = 'boxSelected(A)'></div>
+      <div class="demo" @click = 'boxSelected(B)'></div>
+      <div class="demo" @click = 'boxSelected(C)'></div>
     </section>
   </body>
 </html>
