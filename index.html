@@ -14,12 +14,18 @@
   </head>
   <body>
     <header>
-      <h1>Vue Dynamic Styling</h1>
+      <h1>Vue Course Goals</h1>
     </header>
-    <section id="styling">
-      <div class="demo" :class = "boxAClasses" :style = "{borderColor : boxAselected ? 'red' : '#ccc' }" @click = 'boxSelected(A)'></div>
-      <div class="demo" @click = 'boxSelected(B)'></div>
-      <div class="demo" @click = 'boxSelected(C)'></div>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" />
+      <button @click = "addGoal">Add Goal</button>
+      <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
+      <ul v-else>
+        <li v-for="(goal, index) in goals" @click="removeGoal(index)">{{goal}}</li>
+        <!-- <li v-for="(value, key , index) in {'name' : 'Murali', value : 10}">{{key}}</li>
+        <li v-for="num in 10">{{num}}</li> -->
+      </ul>
     </section>
   </body>
 </html>
