@@ -3,17 +3,27 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
+      fullname: '',
     };
   },
-  computed: {
-    fullname() {
-      if (this.name === '') {
-        this.name = 'max';
+  watch: {
+    name(value) {
+      if (value === '') {
+        this.fullname = 'Max';
       } else {
-        this.name = this.name + ' ' + 'Max'
+        this.fullname = value + 'Max';
       }
-      return this.name
-    },
+    }
+  },
+  computed: {
+    // fullname() {
+    //   if (this.name === '') {
+    //     this.name = 'max';
+    //   } else {
+    //     this.name = this.name + ' ' + 'Max'
+    //   }
+    //   return this.name
+    // },
   },
   methods: {
     outputFullName() {
